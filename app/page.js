@@ -1,37 +1,55 @@
 export default function Home() {
   return (
-    <main style={{
+    <div style={{
       display: "flex",
-      minHeight: "100vh",
+      height: "100vh",
       background: "#0f172a",
       color: "#fff",
       fontFamily: "Arial"
     }}>
-      
+
       {/* MENU */}
-      <aside style={{
-        width: "250px",
+      <div style={{
+        width: 220,
         background: "#020617",
-        padding: "20px",
+        padding: 20,
         borderRight: "1px solid #1e293b"
       }}>
-        <h2>JAAS Pro 🚀</h2>
+        <h2 style={{ marginBottom: 30 }}>JAAS Pro 🚀</h2>
 
-        <nav style={{ marginTop: "30px" }}>
-          <p>📊 Dashboard</p>
-          <p>👥 Clientes</p>
-          <p>💰 Negativação</p>
-          <p>🤝 Negociação</p>
-          <p>🗓️ Agenda</p>
-        </nav>
-      </aside>
+        <a href="/clientes" style={menuItem}>👥 Clientes</a>
+        <p style={menuItem}>💰 Negativação</p>
+        <p style={menuItem}>🔄 Renegociação</p>
+        <p style={menuItem}>📊 Dashboard</p>
+        <p style={menuItem}>📅 Agenda</p>
+      </div>
 
       {/* CONTEÚDO */}
-      <section style={{ padding: "30px", flex: 1 }}>
+      <div style={{ flex: 1, padding: 30 }}>
         <h1>Dashboard</h1>
-        <p>Sistema iniciando...</p>
-      </section>
 
-    </main>
+        <div style={{ display: "flex", gap: 20, marginTop: 20 }}>
+          <div style={card}>📈 Contratações: 0</div>
+          <div style={card}>📉 Cancelamentos: 0</div>
+          <div style={card}>⚠️ Negativações: 0</div>
+        </div>
+      </div>
+    </div>
   );
 }
+
+const menuItem = {
+  display: "block",
+  marginBottom: 15,
+  cursor: "pointer",
+  color: "#cbd5f5",
+  textDecoration: "none"
+};
+
+const card = {
+  background: "#020617",
+  padding: 20,
+  borderRadius: 10,
+  minWidth: 200,
+  border: "1px solid #1e293b"
+};
