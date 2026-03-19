@@ -25,7 +25,6 @@ export default function Clientes() {
       color: "#fff"
     }}>
 
-      {/* MENU */}
       <div style={{
         width: 220,
         background: "#020617",
@@ -37,11 +36,9 @@ export default function Clientes() {
         <a href="/clientes" style={menuItem}>👥 Clientes</a>
       </div>
 
-      {/* CONTEÚDO */}
       <div style={{ flex: 1, padding: 30 }}>
         <h1>Clientes</h1>
 
-        {/* FORM */}
         <div style={{
           background: "#020617",
           padding: 20,
@@ -75,7 +72,6 @@ export default function Clientes() {
           </button>
         </div>
 
-        {/* LISTA */}
         <div style={{ marginTop: 30 }}>
           {clientes.map((c, i) => (
             <div key={i} style={card}>
@@ -125,7 +121,3 @@ const menuItem = {
   color: "#cbd5f5",
   textDecoration: "none"
 };
-      </ul>
-    </div>
-  );
-}
