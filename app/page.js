@@ -49,28 +49,32 @@ export default function Home() {
           gap: 20
         }}>
 
+          {/* CONTRATAÇÕES */}
           <div style={card}>
-            <h3>Tempo Médio</h3>
-            <h1 style={bigNumber}>2h 32m</h1>
-            <p style={{ color: "#22c55e" }}>↓ Melhorou hoje</p>
+            <h3>📈 Contratações</h3>
+            <h1 style={bigNumber}>0</h1>
+            <p style={{ color: "#22c55e" }}>Hoje</p>
           </div>
 
+          {/* CANCELAMENTOS */}
           <div style={card}>
-            <h3>Atendimentos</h3>
-            <h1 style={bigNumber}>48</h1>
+            <h3>📉 Cancelamentos</h3>
+            <h1 style={bigNumber}>0</h1>
+            <p style={{ color: "#ef4444" }}>Hoje</p>
+          </div>
+
+          {/* NEGATIVAÇÕES */}
+          <div style={card}>
+            <h3>⚠️ Negativações</h3>
+            <h1 style={bigNumber}>0</h1>
+            <p style={{ color: "#f59e0b" }}>Hoje</p>
+          </div>
+
+          {/* TICKET MÉDIO */}
+          <div style={card}>
+            <h3>💰 Ticket Médio</h3>
+            <h1 style={bigNumber}>R$ 0</h1>
             <p style={{ color: "#3b82f6" }}>Hoje</p>
-          </div>
-
-          <div style={card}>
-            <h3>Negativações</h3>
-            <h1 style={bigNumber}>12</h1>
-            <p style={{ color: "#f59e0b" }}>Atenção</p>
-          </div>
-
-          <div style={card}>
-            <h3>Cancelamentos</h3>
-            <h1 style={bigNumber}>5</h1>
-            <p style={{ color: "#ef4444" }}>↑ Ontem</p>
           </div>
 
         </div>
@@ -83,7 +87,9 @@ export default function Home() {
 const icon = {
   marginBottom: 20,
   fontSize: 20,
-  cursor: "pointer"
+  cursor: "pointer",
+  color: "#cbd5f5",
+  textDecoration: "none"
 };
 
 const card = {
