@@ -3,53 +3,108 @@ export default function Home() {
     <div style={{
       display: "flex",
       height: "100vh",
-      background: "#0f172a",
+      background: "#020617",
       color: "#fff",
-      fontFamily: "Arial"
+      fontFamily: "sans-serif"
     }}>
 
-      {/* MENU */}
+      {/* SIDEBAR */}
       <div style={{
-        width: 220,
+        width: 80,
         background: "#020617",
-        padding: 20,
-        borderRight: "1px solid #1e293b"
+        borderRight: "1px solid #1e293b",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        paddingTop: 20
       }}>
-        <h2 style={{ marginBottom: 30 }}>JAAS Pro 🚀</h2>
-
-        <a href="/clientes" style={menuItem}>👥 Clientes</a>
-        <p style={menuItem}>💰 Negativação</p>
-        <p style={menuItem}>🔄 Renegociação</p>
-        <p style={menuItem}>📊 Dashboard</p>
-        <p style={menuItem}>📅 Agenda</p>
+        <div style={icon}>🏠</div>
+        <a href="/clientes" style={icon}>👥</a>
+        <div style={icon}>💰</div>
+        <div style={icon}>📊</div>
+        <div style={icon}>📅</div>
       </div>
 
       {/* CONTEÚDO */}
-      <div style={{ flex: 1, padding: 30 }}>
-        <h1>Dashboard</h1>
+      <div style={{ flex: 1, padding: 20 }}>
 
-        <div style={{ display: "flex", gap: 20, marginTop: 20 }}>
-          <div style={card}>📈 Contratações: 0</div>
-          <div style={card}>📉 Cancelamentos: 0</div>
-          <div style={card}>⚠️ Negativações: 0</div>
+        {/* HEADER */}
+        <div style={{
+          display: "flex",
+          justifyContent: "space-between",
+          marginBottom: 20
+        }}>
+          <h2>Dashboard</h2>
+
+          <div>
+            <button style={filterBtn}>Diário</button>
+            <button style={filterBtn}>Mensal</button>
+          </div>
         </div>
+
+        {/* GRID */}
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: 20
+        }}>
+
+          <div style={card}>
+            <h3>Tempo Médio</h3>
+            <h1 style={bigNumber}>2h 32m</h1>
+            <p style={{ color: "#22c55e" }}>↓ Melhorou hoje</p>
+          </div>
+
+          <div style={card}>
+            <h3>Atendimentos</h3>
+            <h1 style={bigNumber}>48</h1>
+            <p style={{ color: "#3b82f6" }}>Hoje</p>
+          </div>
+
+          <div style={card}>
+            <h3>Negativações</h3>
+            <h1 style={bigNumber}>12</h1>
+            <p style={{ color: "#f59e0b" }}>Atenção</p>
+          </div>
+
+          <div style={card}>
+            <h3>Cancelamentos</h3>
+            <h1 style={bigNumber}>5</h1>
+            <p style={{ color: "#ef4444" }}>↑ Ontem</p>
+          </div>
+
+        </div>
+
       </div>
     </div>
   );
 }
 
-const menuItem = {
-  display: "block",
-  marginBottom: 15,
-  cursor: "pointer",
-  color: "#cbd5f5",
-  textDecoration: "none"
+const icon = {
+  marginBottom: 20,
+  fontSize: 20,
+  cursor: "pointer"
 };
 
 const card = {
-  background: "#020617",
+  background: "#0f172a",
   padding: 20,
-  borderRadius: 10,
-  minWidth: 200,
+  borderRadius: 12,
   border: "1px solid #1e293b"
+};
+
+const bigNumber = {
+  fontSize: 32,
+  fontWeight: "bold",
+  marginTop: 10
+};
+
+const filterBtn = {
+  marginLeft: 10,
+  padding: "5px 10px",
+  background: "#0f172a",
+  border: "1px solid #1e293b",
+  color: "#fff",
+  borderRadius: 5,
+  cursor: "pointer"
 };
